@@ -1,4 +1,4 @@
-
+var semver = require('semver')
 var pull = require('pull-stream')
 var path = require('path')
 var FlumeQuery = require('flumeview-query')
