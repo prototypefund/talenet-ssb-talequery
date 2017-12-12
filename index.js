@@ -2,38 +2,20 @@
 var pull = require('pull-stream')
 var path = require('path')
 var FlumeQuery = require('flumeview-query')
-var explain = require('explain-error')
 
 function isString(s) {
   return 'string' === typeof s
 }
 
-exports.name = 'query'
+exports.name = 'talequery'
 exports.version = require('./package.json').version
 exports.manifest = {
   read: 'source'
 }
 
-//what are links used for?
-//query follows
-//query replies
-//query mentions (backlinks & mentions)
-//query votes
-
 var indexes = [
-  {key: 'clk', value: [['value', 'author'], ['value', 'sequence']] },
-  {key: 'typ', value: [['value', 'content', 'type']] },
-//  {key: 'hsh', value: ['key']},
-  {key: 'cha', value: [['value', 'content', 'channel']] },
-  {key: 'aty', value: [['value', 'author'], ['value', 'content', 'type']]}
+  {key: 'idea', value: [['value', 'content', 'ideaKey']] }
 ]
-
-//createHistoryStream( id, seq )
-//[{$filter: {author: <id>, sequence: {$gt: <seq>}}}, {$map: true}]
-
-//messagesByType (type)
-
-//[{$filter: {content: {type: <type>}}}, {$map: true}]
 
 exports.init = function  (ssb, config) {
   var s = ssb._flumeUse('query', FlumeQuery(1, indexes))
