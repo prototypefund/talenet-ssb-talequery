@@ -1,6 +1,7 @@
 {
   "name": "ssb-talequery",
   "version": "1.0.2",
+  "honmepage": "https://github.com/talenet/ssb-talequery",
   "repository": {
     "type": "git",
     "url": "ssb://%MnZBNHv8BmbjTbQM/ZUu6UgpJXUl5wHsUWvfryn//II=.sha256"
